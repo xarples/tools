@@ -1,0 +1,37 @@
+{
+  "name": "@xarples/tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "api-extractor": "lerna run api-extractor --stream",
+    "api-documenter": "lerna run api-documenter --stream",
+    "build": "lerna run build --stream",
+    "test": "lerna run test --stream"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@microsoft/api-documenter": "^7.8.14",
+    "@microsoft/api-extractor": "^7.8.12",
+    "@types/jest": "^26.0.0",
+    "@types/node": "^14.0.13",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "lerna": "^3.22.1",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
+  }
+}
