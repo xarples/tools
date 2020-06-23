@@ -1,10 +1,12 @@
-import encrypt from '../src/lib/encrypt'
+import cache from '../src/lib/cache'
 
 describe('cache', () => {
-  test('Should encrypt a password', async () => {
-    const plain = 'the_best_password'
-    const hashed = await encrypt(plain)
+  test('Should cache a value', async () => {
+    const value = 'test'
+    const testCache = cache<string, string>()
 
-    expect(hashed).toBe(await encrypt(plain))
+    testCache.set('name', value)
+
+    expect(testCache.get('name')).toBe(value)
   })
 })
